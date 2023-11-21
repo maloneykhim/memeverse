@@ -1,0 +1,145 @@
+body {
+    background-image: url("../images/homebgdark.png");
+    background-size: 100%;
+    overflow: hidden;
+    font-family: 'Lexend', sans-serif;
+}
+  
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-46%, -47%);
+    display: flex;
+    align-items: center; /* Center vertically */
+    height: 60vh; 
+    width: 50vw;
+  }
+
+.mainWindowItem {
+    padding-left: 50px;
+    padding-bottom: 75px;
+}
+
+.welcomeImage {
+    height: 45vh;
+}
+
+.mainWindowText {
+    padding-right: 50px;
+    max-width: 350px;
+    color: white;
+}
+
+.mainWindowTitle1 {
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: #FFD438;
+    margin: 0;
+}
+
+.mainWindowTitle2 {
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: #FFD438;
+    margin: 0;
+}
+  
+
+.mainWindowButtons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-46%, -7%);
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: space-between;
+    height: 60vh;
+    width: 50vw;
+}
+
+.mainWindowButton {
+    background-color: #423BB9; 
+    border: 3px solid #FDADE0;
+    border-radius: 4px;
+    color: white;
+    padding: 15px;
+    width: 150px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+.mainWindowButton.no1 {
+    margin-left: 50px;    
+}
+
+.mainWindowButton.no2 {
+    margin-right: 50px;    
+}
+
+.mainWindowButton:hover {
+    background-color: #E78A9C; 
+    border: 3px solid #FDADE0;
+  }
+
+
+
+
+label {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, #4452d20e, #000532); /* Reverse the gradient colors */
+    border: 2px solid #ffffff;
+    border-radius: 200px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+label:after {
+    content: "";
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: 10px;
+    left: 115px;
+    background: transparent;
+    border: 2px solid #ffffff;
+    border-radius: 180px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); /* Fix the typo in rgba */
+    transition: 0.3s;
+}
+
+/* Reverse the animation direction */
+input:checked + label:after {
+    transform: translateX(-200%);
+    background: #DFFFFF;
+}
+
+label:active:after {
+    width: 75px;
+}
+
+/* Reversed moon icon animation */
+label svg.moon {
+    position: absolute;
+    width: 70px;
+    top: 0px;
+    z-index: 100;
+    left: 108px; /* Adjust the initial position for reversed animation */
+    fill: #DFFFFF;
+    transition: 0.3s;
+}
+
+input:checked + label svg.moon {
+    fill: #ffffff;
+}
