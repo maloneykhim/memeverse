@@ -1,0 +1,25 @@
+/* Centering the image */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.image-container {
+  position: relative;
+}
+
+.text-input {
+  position: absolute;
+  padding: 5px;
+  font-size: 16px;
+  outline: none;
+  border: none;
+  background: transparent;
+}
