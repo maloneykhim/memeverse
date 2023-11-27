@@ -25,17 +25,21 @@
         <img src="images/smileyface.png" class="smileyface" alt="">
     </div>
 
-    <div class="promptBox">
-        <img src="images/promptWindowLight.png" class="promptWindow" alt="">
+    <div class="icon-container">
+        <!-- Image as icon -->
+        <img src="images/prompt.png" class="icon" onclick="togglePopup()" alt="Icon">
+        <!-- Popup with image -->
+        <div class="popup" id="popup">
+            <img src="images/promptwindow.png" alt="Popup Image">
+            <div class="promptTextbox">    
+                <p class="promptTitle">Prompt</p>
+                <p id="promptDisplay"></p>
+                <button id="generatePromptBtn">Generate Prompt</button>
+            
+       
+            </div> 
+        </div>
     </div>
-    <div class="promptTextbox">    
-        <p class="promptTitle">Prompt</p>
-        <p class="promptQuestion">Assignment due date changed last minute how do you feel?</p>
-    </div>
-
-
-
-
 
     <div class="mainWindowButtons">            
         <a href="chooselight.html"><button class="mainWindowButton no1">Choose from our gallery</button></a>
