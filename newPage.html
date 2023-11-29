@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modified Image</title>
+</head>
+<body>
+
+    <h1>Modified Image</h1>
+
+    <!-- Display the modified image -->
+    <img id="modifiedImage" src="" alt="Modified Image">
+
+    <script>
+        // Retrieve the saved data URL from localStorage
+        var modifiedImageDataUrl = localStorage.getItem('modifiedImageDataUrl');
+
+        // Set the data URL as the source of the image element
+        var modifiedImageElement = document.getElementById('modifiedImage');
+        modifiedImageElement.src = modifiedImageDataUrl;
+    </script>
+
+</body>
+</html>

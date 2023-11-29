@@ -5,7 +5,7 @@ body {
     font-family: 'Lexend', sans-serif;
   }
   
-#galleryBox {
+#canvasContainer {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -16,7 +16,7 @@ body {
     border-radius: 10px;
     /* background: linear-gradient(180deg, rgba(235, 133, 182, 0.625) 0%, rgba(235,133,182,0) 70%); */
     overflow: hidden;
-  }
+}
 
 
 /* Meme editing canvas */
@@ -30,8 +30,9 @@ body {
 
   .toolbar {
     position: absolute;
-    top: 40%;
-    left: 15%;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 999; /* Ensure the color box is above other elements */
     display: flex;
     justify-content: center;
@@ -45,6 +46,38 @@ body {
     border: 2px solid #000;
     margin-top: 5px;
 }
+
+/* Add styles for the line width label */
+.line-width-label {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* Add some spacing for the inputs */
+.toolbar input {
+  margin-bottom: 5px;
+}
+
+#toggleMode {
+  margin-left: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
   .mainWindowButtons {
     position: absolute;
