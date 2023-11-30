@@ -334,21 +334,32 @@ function handleText(e) {
         }
     }
 
-    // Add a click event listener to the saveAndNext button
-    var saveAndNextButton = document.getElementById('saveAndNext');
-    saveAndNextButton.addEventListener('click', saveAndNext);
+    // // Add a click event listener to the saveAndNext button
+    // var saveAndNextButton = document.getElementById('saveAndNext');
+    // saveAndNextButton.addEventListener('click', saveAndNext);
 
-    // Function to handle save and redirect
-    function saveAndNext() {
-        // Convert the canvas content to a data URL
-        var imageDataUrl = canvas.toDataURL();
+    // // Function to handle save and redirect
+    // function saveAndNext() {
+    //     // Convert the canvas content to a data URL
+    //     var imageDataUrl = canvas.toDataURL();
 
-        // Save the data URL to localStorage (you can also use other methods to store it)
-        localStorage.setItem('modifiedImageDataUrl', imageDataUrl);
+    //     // Save the data URL to localStorage (you can also use other methods to store it)
+    //     localStorage.setItem('modifiedImageDataUrl', imageDataUrl);
 
-        // Redirect to the new page
-        window.location.href = 'newPage.html'; // Replace 'newPage.html' with your actual new page URL
+    //     // Redirect to the new page
+    //     window.location.href = 'newPage.html'; // Replace 'newPage.html' with your actual new page URL
+    // }
+
+    function updateColorBox() {
+        colorBox.style.backgroundColor = colorPicker.value;
     }
+        
+    colorPicker.addEventListener('input', function () {
+        currentColor = colorPicker.value;
+        context.strokeStyle = currentColor;
+        updateColorBox(); // Call the updateColorBox function when the color changes
+    });
+    
 
 
 });

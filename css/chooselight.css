@@ -5,36 +5,51 @@ body {
     font-family: 'Lexend', sans-serif;
 }
   
-.galleryBox {
+#galleryBox {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-46%, -55%);
+    transform: translate(-43%, -55%);
     height: 375px;
     width: 700px;
     border: 5px solid #E78A9C;
     border-radius: 10px;
     background: linear-gradient(180deg, rgba(235, 133, 182, 0.625) 0%, rgba(235,133,182,0) 70%);
     overflow-y: scroll; /* Enable vertical scrolling */
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 -20px; /* Add negative margin to offset the side margins */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
-.galleryImage {
-    background-color: rgba(235, 133, 182, 0.00001); /* Grey background for placeholder images */
-    height: 120px; /* Adjust the height of each image */
-    width: 150px;
-    border-radius: 8px; /* Optional: Add border radius for rounded corners */
-    margin: 20px auto 0; /* Center the image horizontally */
-    background-size: contain; /* Resize the background image to fit within the container */
-    background-repeat: no-repeat; /* Prevent repeating the background image */
-    background-position: center center; /* Center the background image */
-    cursor: pointer; /* Add pointer cursor for clickable images */
+.galleryRow {
+    display: flex;
+    justify-content: space-evenly;
+    width: calc(100% + 40px); /* Ensure the row takes up the full width including margins */
+    margin: 0 -10px; /* Add negative margin to offset the column spacing */
+    margin-bottom: 20px; /* Add margin between rows */
 }
 
-.selected {
-    border: 4px solid #007bff; /* Blue border for selected image */
+.galleryRow img {
+    max-width: 150px;
+    max-height: 120px;
+    width: auto;
+    height: auto;
+    cursor: pointer;
+    padding: 4px;
+    border: 4px solid transparent; /* Set a transparent border by default */
+    margin-right: 10px; /* Adjust spacing between columns */
+    transition: border 0.3s; /* Add a smooth transition for the border */
+}
+
+.galleryRow img:hover {
+    border: 4px solid #4062B8; /* Blue border for selected image */
+}
+
+
+.galleryRow img:last-child {
+    margin-right: 0; /* Remove margin for the last image in each row */
 }
 
 
@@ -81,15 +96,14 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-46%, -7%);
+    transform: translate(-46%, 300%);
     display: flex;
     align-items: center; /* Center vertically */
-    justify-content: space-between;
-    height: 60vh;
-    width: 50vw;
-}
-
-.mainWindowButton {
+    /* justify-content: space-between; */
+    /* width: 50vw; */
+  }
+  
+  .mainWindowButton {
     background-color: #BBD9FF; 
     border: 3px solid #4062B8;
     border-radius: 4px;
@@ -104,9 +118,9 @@ body {
     cursor: pointer;
   }
 
-.mainWindowButton.no1 {
+/* .mainWindowButton.no1 {
     margin-left: 50px;    
-}
+} */
 
 .mainWindowButton.no2 {
     margin-right: 50px;    

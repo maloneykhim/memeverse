@@ -57,3 +57,9 @@ document.getElementById('generatePromptBtn').addEventListener('click', () => {
     })
     .catch(error => console.log(error));
 });
+
+
+
+
+
+

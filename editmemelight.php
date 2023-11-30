@@ -1,3 +1,38 @@
+<?php
+ 
+session_start();
+
+//if the image has been stored in the session var
+if(isset($_SESSION["uploadedImage"])){
+    //echo($_SESSION["uploadedImage"]);
+$imagePath  = $_SESSION["uploadedImage"];
+
+//request made by fetch
+if($_SERVER['REQUEST_METHOD'] == 'GET'&& isset($_GET['getImage'])){
+    //send back to js
+    echo($imagePath);
+    exit();
+}
+
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+$upload_dir = "modifiedMemes/";
+$imgName = $_POST['nameofImage'];
+$img = $_POST['p5CanvasImage'];
+$img = str_replace('data:image/png;base64,', '', $img);
+$img = str_replace(' ', '+', $img);
+$data = base64_decode($img);
+//$file = $upload_dir . mktime() . ".png";
+$file = $upload_dir.$imgName.".png";
+//save to file...
+$success = file_put_contents($file, $data);
+//echo($upload_dir . mktime() . ".png");
+echo($upload_dir . $imgName . ".png");
+exit();
+} 
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,9 +76,17 @@
 
     <div class="mainWindowButtons">            
         <a href="beginlight.html"><button class="smallWindowButton no1">Back</button></a>
-        <button id="saveAndNext" class="smallWindowButton no2">Next</button>
+        <a href="testgallerylight.php"><button id="nextStep" class="smallWindowButton no2">Next</button></a>
     </div>
 
     <script src="javascript/editmemelight.js"></script>
 </body>
 </html>
+
+<?php
+}
+else{
+    echo("go away");
+}
+
+?>

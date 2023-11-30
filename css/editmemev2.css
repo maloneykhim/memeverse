@@ -14,8 +14,8 @@ body {
     width: 700px;
     border: 5px solid #E78A9C;
     border-radius: 10px;
+    overflow: scroll;
     /* background: linear-gradient(180deg, rgba(235, 133, 182, 0.625) 0%, rgba(235,133,182,0) 70%); */
-    overflow: hidden;
 }
 
 
@@ -61,23 +61,6 @@ body {
 #toggleMode {
   margin-left: 10px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   
   .mainWindowButtons {
     position: absolute;
