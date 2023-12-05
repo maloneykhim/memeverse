@@ -172,30 +172,31 @@ input:checked+ label svg.moon{
     <div class="gallery" id="result"></div>
 
     <div class="lightbox" id="lightbox">
-        <span class="close-btn" onclick="closeLightbox()">×</span>
+        <span class="close-btn" id="lightboxbtn">×</span>
         <a id="download-link" download><img id="lightbox-image"></a>
     </div>
 
     <script>
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () { 
+    document.querySelector("#lightboxbtn").addEventListener("click",closeLightbox)
         const toggleButton = document.getElementById("darkmode-toggle");
         const body = document.body;
-        let isAnimating = false; // Flag to track the animation state
+        let isAnimating = false;
 
         toggleButton.addEventListener("click", function () {
             if (isAnimating) {
                 return; // If the animation is in progress, do nothing
             }
 
-            isAnimating = true; // Set the animation flag
+            isAnimating = true; 
 
             // Delay the background image change after the animation is complete
             setTimeout(function () {
-                body.classList.toggle('night-mode'); // Toggle night mode class
-                updateBackgroundImage(); // Update background image based on night mode state
+                body.classList.toggle('night-mode'); // Toggle darkmode class
+                updateBackgroundImage(); // Update background image based on dark mode state
 
-                isAnimating = false; // Reset the animation flag
+                isAnimating = false; // Reset the animation
             }, 1000); // Adjust the delay time (in milliseconds) as needed
         });
 
@@ -210,7 +211,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    window.onload = function () {
+    // window.onload = function () {
         fetch('/testgallerylight.php?getImages=true')
             .then(function (response) {
                 console.log("got here with response ...");
@@ -235,7 +236,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     container.appendChild(image);
                 }
             }
-        }
+         }
 
         function openLightbox(imageSrc) {
             let lightbox = document.getElementById("lightbox");
@@ -266,7 +267,7 @@ document.addEventListener("DOMContentLoaded", function () {
             let scrollValue = window.scrollY;
             scrollingImages.style.transform = `translateX(-${scrollValue}px)`;
         });
-    }
+    //}
 </script>
 </body>
 </html>

@@ -17,6 +17,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'&& isset($_GET['getImage'])){
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 $upload_dir = "modifiedMemes/";
 $imgName = $_POST['nameofImage'];
+$description = $_POST["description"];
 $img = $_POST['p5CanvasImage'];
 $img = str_replace('data:image/png;base64,', '', $img);
 $img = str_replace(' ', '+', $img);
